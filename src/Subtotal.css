@@ -1,0 +1,9 @@
+.subtotal {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.total {
+  margin-right: 20px;
+}
