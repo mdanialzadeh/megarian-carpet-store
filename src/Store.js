@@ -1,7 +1,7 @@
 import React from 'react'
 import './Store.css'
 import Product from './Product'
-import ImageData from './images/Products/imagedata'
+import ImageData from './imagedata'
 
 
 function sidebar() {
@@ -61,39 +61,39 @@ function Store() {
                 <Product 
                     id="000001"
                     title="carpet1"
-                    image= {ImageData[0]}
+                    image= {ImageData}
                     description="carpet description"
                     price={12.99}/>
                 <Product 
                     id="000002"
                     title="carpet1"
-                    image= {ImageData[1]}
+                    image= {ImageData}
                     description="carpet description"
                     price={12.99}/>
                 <Product 
                     id="000003"
                     title="carpet1"
-                    image={ImageData[2]}
+                    image={ImageData}
                     description="carpet description"
                     price={12.99}/>
                 </div>
-                <div className = "secondrow">
+            <div className = "secondrow">
                 <Product 
                     id="000004"
                     title="carpet1"
-                    image= {ImageData[3]}
+                    image= {ImageData}
                     description="carpet description"
                     price={12.99}/>
                 <Product 
                     id="000005"
                     title="carpet1"
-                    image= {ImageData[4]}
+                    image= {ImageData}
                     description="carpet description"
                     price={12.99}/>
                 <Product 
                     id="000006"
                     title="carpet1"
-                    image={ImageData[5]}
+                    image={ImageData}
                     description="carpet description"
                     price={12.99}/>
                 </div>
@@ -101,23 +101,22 @@ function Store() {
                 <Product 
                     id="000007"
                     title="carpet1"
-                    image= {ImageData[6]}
+                    image= {ImageData}
                     description="carpet description"
                     price={12.99}/>
                 <Product 
                     id="000008"
                     title="carpet1"
-                    image= {ImageData[7]}
+                    image= {ImageData}
                     description="carpet description"
                     price={12.99}/>
                 <Product 
                     id="000009"
                     title="carpet1"
-                    image={ImageData[8]}
+                    image={ImageData}
                     description="carpet description"
                     price={12.99}/>
-                </div>            
-                            
+                </div>                                       
             </div>
         </div>
     )

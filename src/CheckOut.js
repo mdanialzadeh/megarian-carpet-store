@@ -10,7 +10,8 @@ function CheckOut() {
     return (
         <div className="checkout">
             <h2 className="checkout_title">
-                {user?.email}'s' Shopping Basket  ({basket.length} items)
+            {!user ? <p>Shopping Basket  ({basket.length} items)</p> : <p>{user?.email}'s' Shopping Basket  ({basket.length} items)</p>}
+             
             </h2>
             <div className="columnHeaders">
                 <p>Product</p>

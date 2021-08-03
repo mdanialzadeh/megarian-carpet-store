@@ -9,12 +9,6 @@
   width: 300px;
 }
 
-.product_image {
-  width: 80%;
-  object-fit: fill;
-  margin-bottom: 20px;
-}
-
 .product_price {
   display: flex;
   align-items: center;

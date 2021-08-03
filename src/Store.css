@@ -39,22 +39,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff59;
-}
-
-.firstrow {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.secondrow {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.thirdrow {
-  display: flex;
-  justify-content: flex-end;
+  background-color: #ffffff56;
+  overflow: scroll;
 }
 
 .dropbtn {
