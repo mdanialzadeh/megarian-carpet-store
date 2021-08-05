@@ -1,7 +1,7 @@
 import React from 'react'
 import './Store.css'
 import Product from './Product'
-import Product1_imgs from './images/Products/000001/Product1imgs.js'
+import {Product1_imgs} from './Product1imgs.js'
 import LazyLoad from 'react-lazyload';
 
 function sidebar() {
