@@ -1,8 +1,8 @@
 import React from 'react'
 import './Store.css'
 import Product from './Product'
-import ImageData from './imagedata'
-
+import Product1_imgs from './images/Products/000001/Product1imgs.js'
+import LazyLoad from 'react-lazyload';
 
 function sidebar() {
     return (
@@ -55,70 +55,20 @@ function Store() {
             <div className="sidebar">
                 {sidebar()}
             </div>
-
+            <LazyLoad>
             <div className="storecontainer">
-                <div className="firstrow">
                 <Product 
                     id="000001"
                     title="carpet1"
-                    image= {ImageData}
+                    image= {Product1_imgs}
                     description="carpet description"
                     price={12.99}/>
-                <Product 
-                    id="000002"
-                    title="carpet1"
-                    image= {ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                <Product 
-                    id="000003"
-                    title="carpet1"
-                    image={ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                </div>
-            <div className = "secondrow">
-                <Product 
-                    id="000004"
-                    title="carpet1"
-                    image= {ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                <Product 
-                    id="000005"
-                    title="carpet1"
-                    image= {ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                <Product 
-                    id="000006"
-                    title="carpet1"
-                    image={ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                </div>
-                <div className = "thirdrow">
-                <Product 
-                    id="000007"
-                    title="carpet1"
-                    image= {ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                <Product 
-                    id="000008"
-                    title="carpet1"
-                    image= {ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                <Product 
-                    id="000009"
-                    title="carpet1"
-                    image={ImageData}
-                    description="carpet description"
-                    price={12.99}/>
-                </div>                                       
             </div>
+            </LazyLoad>
         </div>
+
+
+        
     )
 }
 

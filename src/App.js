@@ -5,11 +5,10 @@ import Home from './Home.js'
 import Store from './Store'
 import CheckOut from "./CheckOut";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import ImageSlider from "./ImageSlider";
 import Login from "./Login";
 import {auth} from "./firebase"
 import { useStateValue } from "./StateProvider";
-
+import LazyLoad from 'react-lazyload';
 
 
 function App() {
@@ -50,7 +49,9 @@ function App() {
           
           <Route path="/store">
             <Header />
+          <LazyLoad>
             <Store />
+          </LazyLoad>
           </Route>  
       
           <Route path="/checkout">
@@ -61,7 +62,6 @@ function App() {
           <Route path="/">
             <Header />
             <Home />
-            <ImageSlider />
             </Route>
         
         </Switch>  

@@ -12,7 +12,6 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
 const ImageSlider = () => {
     
     let slides = [{image:RC1},{image:RC2},{image:RC3},{image:RC4},{image:RC5}]  
-    
     const [current, setCurrent] = useState(0);
     const length = slides.length;
   

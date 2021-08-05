@@ -1,61 +1,45 @@
 .shopcontainer {
   height: 80vh;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 0vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
-}
-
-.shopcontainer::after {
-  content: "";
-  background-image: url("./images/linenstore.png");
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  overflow-wrap: none;
 }
 
 .sidebar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: auto;
+  margin: 2%;
 }
+
 .storefilter {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: rgba(0, 255, 255, 0);
-  margin-bottom: 5vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #b8adad;
+  height: 50vh;
+  width: max-content;
 }
 .storecontainer {
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #ffffff56;
-  overflow: scroll;
 }
 
 .dropbtn {
   background-color: #b8adad;
   color: white;
-  padding: 5px 60px;
-  font-size: 20px;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-  position: relative;
-  display: inline-block;
+  display:flex;
+  width: 10%;
 }
 
 /* Dropdown Content (Hidden by Default) */
