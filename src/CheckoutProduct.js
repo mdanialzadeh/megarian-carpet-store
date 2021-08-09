@@ -22,7 +22,7 @@ function CheckoutProduct({id, image, title, price}) {
                 </div>
             <div className= "checkoutProduct_info">     
                 <p className= "checkoutProduct_price">$ <strong>{price}</strong></p>
-                <button onClick= {removeFromBasket}>Remove from Basket</button>
+                <button className= 'remove' onClick= {removeFromBasket}>Remove from Basket</button>
             </div>
         </div>
     )

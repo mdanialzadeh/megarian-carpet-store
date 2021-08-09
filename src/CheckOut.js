@@ -13,11 +13,6 @@ function CheckOut() {
             {!user ? <p>Shopping Basket  ({basket.length} items)</p> : <p>{user?.email}'s' Shopping Basket  ({basket.length} items)</p>}
              
             </h2>
-            <div className="columnHeaders">
-                <p>Product</p>
-                <p>image</p>
-                <p>price per unit</p>
-            </div>
             <div class="checkout_left">
                 
 

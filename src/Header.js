@@ -28,7 +28,7 @@ const handleAuth = () => {
                 </Link>
                 <Link to= "/Store">
                     <div className= "header_option">
-                         <span className= "header_optionLineOne">Shop</span>
+                         <span className= "header_optionLineOne"></span>
                     </div>
                 </Link>      
 

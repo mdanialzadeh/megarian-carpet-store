@@ -9,6 +9,8 @@ import Login from "./Login";
 import {auth} from "./firebase"
 import { useStateValue } from "./StateProvider";
 import LazyLoad from 'react-lazyload';
+import Payment from "./Payment"
+import Footer from "./Footer";
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
         <Route path="/login">
             <Header />
             <Login />
+            <Footer />
           </Route> 
           
           <Route path="/store">
@@ -52,16 +55,25 @@ function App() {
           <LazyLoad>
             <Store />
           </LazyLoad>
+          <Footer />
           </Route>  
       
           <Route path="/checkout">
             <Header />
             <CheckOut />
+            <Footer />
+          </Route>
+
+          <Route path="/payment">
+            <Header />
+            <Payment/>
+            <Footer />
           </Route>       
 
           <Route path="/">
             <Header />
             <Home />
+            <Footer />
             </Route>
         
         </Switch>  

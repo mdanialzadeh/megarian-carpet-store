@@ -1,31 +1,44 @@
 .shopcontainer {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
-  margin-top: 0vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow-wrap: none;
-}
-
-.sidebar {
-  width: auto;
-  margin: 2%;
-}
-
-.storefilter {
+  background-color: rgb(48, 71, 85);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #b8adad;
-  height: 50vh;
-  width: max-content;
 }
+
+
+
+.storefilter {
+  display: grid;
+  width: 100%;
+  background-color: #b8adad;
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr ;
+}
+
 .storecontainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff56;
+  max-height: 800px;
+  margin: 0% 10%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 5%;
+  column-gap: 3%;
+  background-color: #ffffff07;
+  overflow: scroll;
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.storecontainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.storecontainer {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .dropbtn {
@@ -34,12 +47,12 @@
   font-size: 1rem;
   border: none;
   cursor: pointer;
+  padding: 10px;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   display:flex;
-  width: 10%;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -47,22 +60,24 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 80px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
   z-index: 1;
+  margin-top: 30px;
 }
 
 /* Links inside the dropdown */
 .dropdown_content button {
   color: black;
-  padding: 0px 80px;
+  width: 100%;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown_content button:hover {
-  background-color: #f1f1f1;
+  background-color: #b8adad;
 }
 
 /* Show the dropdown menu on hover */

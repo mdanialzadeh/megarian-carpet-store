@@ -1,0 +1,32 @@
+.payment {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment_container > h1 {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.payment_container > h1 a {
+    text-decoration: none;
+}
+
+.payment_section {
+    display: flex;
+    padding:20px;
+    margin: 0px 20px;
+    border-bottom: 1px solid black;
+}
+
+.payment_title {
+    flex: 0.3;
+}
+
+.payment_adress, .payment_items {
+    flex: 0.7;
+}
+

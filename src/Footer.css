@@ -1,0 +1,9 @@
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 2vh;
+    background-color: teal;
+    position: fixed;
+    bottom: 0;
+}

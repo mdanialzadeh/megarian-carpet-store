@@ -1,6 +1,6 @@
 .checkout_title {
   margin-bottom: 30px;
-  margin-top: 5vh;
+  margin-top: 15vh;
 }
 
 .columnHeaders {
@@ -19,6 +19,8 @@
   flex-direction: column;
   justify-self: center;
   align-items: center;
+  background-color: rgba(192, 172, 118, 0.452);
+  position: fixed;
 }
 
 .checkout_left {
@@ -26,10 +28,10 @@
   flex-direction: column;
   justify-content: space-between;
   border: rgba(0, 0, 0, 0.726) 3px solid;
-  width: 100%;
+  width: 90%;
   max-height: 55vh;
   overflow-y: scroll;
-  background-color: rgba(0, 30, 64, 0.712);
+  background-color: rgba(57, 91, 129, 0.664);
 }
 
 .checkout_left::-webkit-scrollbar {
@@ -39,7 +41,9 @@
 .checkout_right {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
+  margin: 2%;
+
 }
 
 .checkoutProduct_price {
