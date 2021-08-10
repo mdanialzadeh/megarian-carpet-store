@@ -29,7 +29,7 @@ function Payment() {
                 method:'post',
                 url: `/payment/create?total=${getBasketTotal(basket) * 100}`
             });
-            setClientSecret(response.thousandSeparator.clientSecret)
+            setClientSecret(response.data.clientSecret)
         }
 
         getClientSecret();
@@ -98,7 +98,7 @@ function Payment() {
                             <h3>payment Method</h3>
                     </div>
                     <div className="payment_details">
-                            <form className="form">
+                            <form className="form" onSubmit={handleSubmit}>
                                 <CardElement onChange={handleChange} />
                                 <div className= "payment_priceContainer">
                                     <CurrencyFormat
@@ -111,10 +111,11 @@ function Payment() {
                                     displayType={"text"}
                                     prefix={"$"}
                                     />
-                                    <button disable={processing || disabled || succeded}>
+                                    <button disabled={processing || disabled || succeded}>
                                         <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                                     </button>
                                 </div>
+                                {error && <div>{error}</div>}
                             </form>
                     </div>
 
