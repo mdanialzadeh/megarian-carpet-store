@@ -11,8 +11,8 @@
 .product_imageSlider {
   display: flex;
   justify-content: center;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 100%;
   padding-top: 10%;
 }
 

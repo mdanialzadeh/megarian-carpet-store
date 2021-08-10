@@ -17,7 +17,7 @@
 }
 
 .storecontainer {
-  max-height: 800px;
+  height: 1100px;
   margin: 0% 10%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;

@@ -11,6 +11,11 @@ import { useStateValue } from "./StateProvider";
 import LazyLoad from 'react-lazyload';
 import Payment from "./Payment"
 import Footer from "./Footer";
+import { loadStripe } from "@stripe/stripe-js"
+import { Elements} from "@stripe/react-stripe-js"
+
+
+const promise = loadStripe('pk_test_51JMfjxK2gc64MwyBFk7E8YqRRzkDiwMhIeFzFtAUU404cPlKzjISnY9zvfbd0LcoHGvyosertrcbxsjhip1GpByp00y1jY8YkG');
 
 
 function App() {
@@ -66,7 +71,9 @@ function App() {
 
           <Route path="/payment">
             <Header />
+            <Elements stripe={promise}>
             <Payment/>
+            </Elements>
             <Footer />
           </Route>       
 
