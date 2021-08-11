@@ -20,6 +20,7 @@ const promise = loadStripe('pk_test_51JMfjxK2gc64MwyBFk7E8YqRRzkDiwMhIeFzFtAUU40
 
 function App() {
 
+  // eslint-disable-next-line no-empty-pattern
   const [{},dispatch] = useStateValue();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ function App() {
 
       }
     })
-  }, [])
+  }, [dispatch])
 
   return (
     //BEM

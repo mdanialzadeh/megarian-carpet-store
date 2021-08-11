@@ -59,6 +59,7 @@ function Slider (images)  {
 
 function Product({id, title, image, description, price}) {
 
+        // eslint-disable-next-line no-unused-vars
         const [state, dispatch] = useStateValue();
 
         const addToBasket = () => {
