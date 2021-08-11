@@ -13,7 +13,7 @@ import Payment from "./Payment"
 import Footer from "./Footer";
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements} from "@stripe/react-stripe-js"
-
+import Orders from "./Orders"
 
 const promise = loadStripe('pk_test_51JMfjxK2gc64MwyBFk7E8YqRRzkDiwMhIeFzFtAUU404cPlKzjISnY9zvfbd0LcoHGvyosertrcbxsjhip1GpByp00y1jY8YkG');
 
@@ -49,12 +49,17 @@ function App() {
       <div className="app">
         <Switch>
 
+        <Route path="/Orders">
+          <Header />
+          <Orders />
+        </Route>
+
         <Route path="/login">
             <Header />
             <Login />
             <Footer />
           </Route> 
-          
+
           <Route path="/store">
             <Header />
           <LazyLoad>
