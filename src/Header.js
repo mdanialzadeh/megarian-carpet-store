@@ -43,7 +43,12 @@ const handleAuth = () => {
                 <Link to={!user && '/login'}>
                     <div onClick= {handleAuth} className="header_option">
                         <span className="header_optionLineOne">
-                            {user ? 'Sign Out' :<PersonIcon className="Account" /> }
+                            {user ? 
+                            <div>
+                            <small>Sign Out</small>
+                            <small>Orders</small>
+                            </div>
+                            :<PersonIcon className="Account" /> }
                         </span>                        
                     </div>
                  </Link>   
