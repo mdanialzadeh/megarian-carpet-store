@@ -1,17 +1,10 @@
 .checkout_title {
   margin-bottom: 30px;
   margin-top: 15vh;
+  color: aliceblue;
 }
 
-.columnHeaders {
-  display: flex;
-  width: 65vw;
-  justify-content: space-between;
-  position: static;
-  left: 0;
-  margin-right: 20vw;
-  margin-bottom: 10px;
-}
+
 .checkout {
   height: 100%;
   width: 100%;
@@ -19,7 +12,6 @@
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  background-color: rgba(192, 172, 118, 0.452);
   position: fixed;
 }
 
@@ -27,11 +19,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: rgba(0, 0, 0, 0.726) 3px solid;
+  border: rgba(255, 255, 255, 0.726) 1px solid;
   width: 90%;
   max-height: 55vh;
   overflow-y: scroll;
-  background-color: rgba(57, 91, 129, 0.664);
+  background-color: #ffffffc9;
 }
 
 .checkout_left::-webkit-scrollbar {
@@ -43,6 +35,7 @@
   justify-content: space-between;
   width: 90%;
   margin: 2%;
+  color: aliceblue;
 
 }
 

@@ -86,7 +86,7 @@ function App() {
           <Route path="/">
             <Header />
             <Home />
-            <Footer />
+            <Footer/>
             </Route>
         
         </Switch>  

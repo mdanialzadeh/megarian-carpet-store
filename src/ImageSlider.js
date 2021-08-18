@@ -10,11 +10,13 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 const ImageSlider = () => {
-    
+  
+
     let slides = [{image:RC1},{image:RC2},{image:RC3},{image:RC4},{image:RC5}]  
     const [current, setCurrent] = useState(0);
     const length = slides.length;
-  
+    console.log(current)
+    
     const nextSlide = () => {
       setCurrent(current === length - 1 ? 0 : current + 1);
     };
@@ -23,35 +25,65 @@ const ImageSlider = () => {
       setCurrent(current === 0 ? length - 1 : current - 1);
     };
   
+      
+   const jumpSlide = (index) => {
+     setCurrent(parseInt(index))
+     
+     }
+   
+   
     if (!Array.isArray(slides) || slides.length <= 0) {
       return null;
     }
 
+    
+  
+
     return (
 
-          <section className='slider'>
-            
+          <section className='img_slider'>
+            <div className = "slider">
             <button className='left-arrow' onClick={prevSlide}>
               <ArrowBackIcon className="arrow_icon"/>
-            </button>       
-            
-            {slides.map((slide, index) => {
-            return (
-              <div
-                className={index === current ? 'slide active' : 'slide'}
-                key={index}
-              >
-                {index === current && (
-                  <img src={slide.image} alt=' ' className='image' />
-                )}
-              </div>
-            );
-            })}
+            </button>   
+
+
+            <div className="slide_container">
+
+              <div className="slider_box">
+                {slides.map((slide,index) => {
+                return (
+              
+                  <div
+                    className={index === current ? 'slide active' : 'slide'}
+                    key={index}    
+                  >
+                    {index === current && (
+                      <img src={slide.image} alt=' ' className='image' draggable="false"/>
+                    )}
+                  </div>)})}
+                </div>
+
+
+
+                <div className="slider_dots">
+                   {slides.slice().map((slide,index) =>{
+                  return (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      jumpSlide(`${index}`)
+                    }}
+                    className={index === current ? 'button active' : 'button'} />)})}
+                </div>
+                
+            </div>
+
 
             <button className='right-arrow' onClick={nextSlide}>
               <ArrowForwardIcon className="arrow_icon"/>
             </button>
-
+</div>
         </section>
 
     )

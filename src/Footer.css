@@ -1,9 +1,17 @@
 .footer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    min-height: 2vh;
-    background-color: teal;
-    position: fixed;
-    bottom: 0;
+position: absolute;
+bottom: 0;
+left:0;
+width: 100%;
+background-color: rgba(3, 3, 3, 0.438);
+text-align: center;
+padding-bottom: 1em;
+padding-top: 1em;
+height: 6em;
+color: aliceblue;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+font-size: 1.2em;
+border-top: 2px black solid;
 }

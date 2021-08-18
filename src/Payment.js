@@ -95,7 +95,7 @@ function Payment() {
                         <p>New york, NY</p>
                     </div>
                 </div>
-                <div className= 'payment_section'>
+                <div className= 'payment_section2'>
                     <div className='payment_title' >
                         <h3>Review items and Delivery</h3>
                     </div>

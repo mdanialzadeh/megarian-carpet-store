@@ -3,7 +3,7 @@ import './Product.css'
 import { useStateValue } from './StateProvider'
 import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
-import LazyLoad from 'react-lazyload';
+
 
 function Slider (images)  {
   
@@ -31,7 +31,7 @@ function Slider (images)  {
             <button className='leftarrow' onClick={prevSlide}>
               <ArrowBackIcon className="arrowicon"/>
             </button>       
-            <LazyLoad>
+            
             {slides.map((slide, index) => {
             return (
               
@@ -46,7 +46,7 @@ function Slider (images)  {
               
             );
             })}
-</LazyLoad>
+
             <button className='rightarrow' onClick={nextSlide}>
               <ArrowForwardIcon className="arrowicon"/>
             </button>
@@ -75,13 +75,11 @@ function Product({id, title, image, description, price}) {
         }
     return (
         <div className="product">
-            <title>{title}</title>
-    
+            <p className="Product_info">{title}</p>    
             <div className="product_imageSlider">
                 {Slider({image})}
             </div>
-            
-            <div className= "Product_info">
+               <div className= "Product_info">
                 <p className= {description}>This is a carpet</p>
             <p className= "product_price">
                 <small>$</small>
