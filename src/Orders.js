@@ -18,6 +18,7 @@ function Orders() {
             .onSnapshot(snapshot => (
                 setOrders(snapshot.docs.map(doc => ({
                     id: doc.id,
+                    image: doc.image,
                     data: doc.data()
                 })))
             ))

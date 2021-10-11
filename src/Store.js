@@ -14,7 +14,7 @@ import {
     Product10_imgs,
     Product11_imgs
 } from './Productimgs.js'
-import LazyLoad from 'react-lazyload';
+
 
 function sidebar() {
     return (
@@ -67,7 +67,6 @@ function Store() {
             <div className="sidebar">
                 {sidebar()}
             </div>
-            <LazyLoad>
             <div className="storecontainer">
 
                   <Product 
@@ -148,7 +147,7 @@ function Store() {
         
                 
             </div>
-            </LazyLoad>
+
         </div>
 
 

@@ -8,12 +8,12 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Login from "./Login";
 import {auth} from "./firebase"
 import { useStateValue } from "./StateProvider";
-import LazyLoad from 'react-lazyload';
 import Payment from "./Payment"
 import Footer from "./Footer";
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements} from "@stripe/react-stripe-js"
 import Orders from "./Orders"
+import Register from "./Register";
 
 const promise = loadStripe('pk_test_51JMfjxK2gc64MwyBFk7E8YqRRzkDiwMhIeFzFtAUU404cPlKzjISnY9zvfbd0LcoHGvyosertrcbxsjhip1GpByp00y1jY8YkG');
 
@@ -28,16 +28,20 @@ function App() {
     auth.onAuthStateChanged(authUser => {
       console.log("the user is: " , authUser)
 
-      if (authUser) {
+      if (authUser ) {
         dispatch({
           type:'SET_USER',
-          user: authUser
+          user: authUser,
+          
+          
         })
 
       } else {
         dispatch({
           type:'SET_USER',
-          user: null
+          userL: null,
+          user: null,
+          
         })
 
       }
@@ -61,11 +65,15 @@ function App() {
             <Footer />
           </Route> 
 
+          <Route path="/Register">
+            <Header />
+            <Register />
+            <Footer />
+          </Route> 
+
           <Route path="/store">
             <Header />
-          <LazyLoad>
             <Store />
-          </LazyLoad>
           <Footer />
           </Route>  
       

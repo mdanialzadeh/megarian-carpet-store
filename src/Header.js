@@ -10,11 +10,15 @@ import { auth } from './firebase';
 
 function Header() {
 
-const [{basket,user}] = useStateValue()
+const [{basket,userL,user}, dispatch] = useStateValue()
 
 const handleAuth = () => {
     if(user) {
         auth.signOut();
+        dispatch ({
+            type: "LOG_OUT",
+            userL: null
+        })
     }
 }
 
@@ -30,7 +34,7 @@ const handleAuth = () => {
         
                 <div className="header_nav_mid">
                     <p className= "header_welcome">
-                        {!user ? '' : <p>Welcome! {user.email}</p>}
+                        {user ? <p>Welcome {userL?.firstName + "!"}</p> : ''  }
                     </p>  
                 </div> 
                
