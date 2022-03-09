@@ -2,15 +2,21 @@ import React from 'react'
 import './Header.css'
 import Logo from './images/Header images/logo.png'
 import ShoppingCart from '@material-ui/icons/ShoppingCartOutlined';
-import PersonIcon from '@material-ui/icons/Person';
-import StorefrontIcon from '@material-ui/icons/Storefront';
 import { Link } from "react-router-dom"
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+
+
+
 
 function Header() {
 
-const [{basket,userL,user}, dispatch] = useStateValue()
+
+  
+const [{basket,user}, dispatch] = useStateValue()
 
 const handleAuth = () => {
     if(user) {
@@ -23,64 +29,76 @@ const handleAuth = () => {
 }
 
     return (
-        <div className="header">
-            <div className="header_container">
-                
-                <div className="navleft">
-                <Link to="/">
-                    <img className="header_logo" alt="megarian carpet logo" src={Logo} />
-                </Link>
-                </div>
-        
-                <div className="header_nav_mid">
-                    <p className= "header_welcome">
-                        {user ? <p>Welcome {userL?.firstName + "!"}</p> : ''  }
-                    </p>  
-                </div> 
-               
-               
-            
-                <div className="header_nav_right">  
 
-                    <div className="headeroption">
-                        <Link to={!user && '/login'} className="logIn">
-                            
-                                <div className="logIn">
-                                    {user ? 
-                                        <div className="sign_out">
-                                           <div onClick= {handleAuth} > 
-                                            <small className="signout">Sign Out</small>
-                                           </div>
-                                            <Link to='/Orders'>
-                                             <small className="signout"> Orders</small>
-                                            </Link>
+<Navbar collapseOnSelect={true} expand="sm" bg="white" variant="light" fixed="top" className='navhome'>
+  <Container>
+  <Navbar.Brand >
+      <Link to="/">
+        <img  alt="megarian carpet logo" src={Logo} />
+      </Link>
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
   
-                                        </div>
-                                    :<PersonIcon className="header_icon" /> }
-                                </div>                        
-                            
-                        </Link>   
 
 
+ 
+    <Nav >
+          <Nav.Item>
+        <Nav.Link>
+          <Link to= "/Store">
+           Store
+          </Link>
+        </Nav.Link>
+      </Nav.Item>
+     
+             
 
+    {user ? 
+      <>
+      <Nav.Item>
+        <Nav.Link>
+          <Link to= "/Orders">
+            Orders
+          </Link>
+        </Nav.Link>
+      </Nav.Item>
+      
+      <Nav.Item>
+        <Nav.Link>
+          <div onClick= {handleAuth} > 
+            <p className="signout">Sign Out</p>
+          </div>
+        </Nav.Link>
+      </Nav.Item>
+      </>
+      :
+      <Nav.Item>
+        <Nav.Link to='./login'>
+          <Link to="./login">
+            <p>Sign In</p>
+          </Link>
+        </Nav.Link>
+      </Nav.Item>
+    }
+                               
+<Nav.Item>
+       <Nav.Link>
+        <Link to="/Checkout" className="checkoutheader">
+          <span>
+            < ShoppingCart className="header_icon"/>
+              {basket?.length} 
+          </span>
+        </Link>
+       </Nav.Link>
+     </Nav.Item>    
 
-                        <Link to= "/Store">
-                            <StorefrontIcon className="header_icon"/>
-                        </Link>
-                        <Link to="/Checkout" className="checkoutheader">
-                            
-                                < ShoppingCart className="header_icon"/>
-                                <div className="header_basketCount">{basket?.length}</div> 
-                                        
-                        </Link>
-                        
-                    </div>
-                        
-                                                   
-                </div>             
-            </div>       
-                      
-        </div>
+    </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+
+       
     )
 }
 

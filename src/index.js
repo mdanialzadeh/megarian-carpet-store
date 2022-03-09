@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reducer, { initialState } from "./reducer"
 import {StateProvider} from "./StateProvider"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,5 +14,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
 
 

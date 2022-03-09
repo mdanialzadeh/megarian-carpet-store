@@ -4,7 +4,7 @@ import {auth} from "./firebase"
 import { useHistory } from "react-router-dom"
 import { useStateValue } from './StateProvider'
 import "firebase/database"
-
+import Container from 'react-bootstrap/Container'
 
 
 function Register() {
@@ -72,6 +72,8 @@ function Register() {
  
 
     return (
+        <Container style={{margin:'auto'}}>
+
   <div className="register">
                     <h1>Register</h1>
                     <form className="register_form">
@@ -84,8 +86,9 @@ function Register() {
                         <input type="email" value={email} onChange={e => setEmail(e.target.value)} required></input>
                         <h4>Password:</h4>            
                         <input type="password" value={password} onChange={e => setPassword(e.target.value)} required></input> 
-
+                    
                         <div class="form-group">
+                            <h4>Address</h4>
                             <input type="street" class="form-control" id="autocomplete" placeholder="Street"required value={street} onChange={e => setstreet(e.target.value)}/>
                             <input type="city" class="form-control" id="inputCity" placeholder="City" required value={city} onChange={e => setcity(e.target.value)}/>
                             <input type="state" class="form-control" id="inputState" placeholder="State" required value={State} onChange={e => setState(e.target.value)}/>
@@ -97,6 +100,7 @@ function Register() {
                     </form>
                     
                 </div>  
+        </Container>
     )
 }
 

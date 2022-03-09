@@ -1,65 +1,47 @@
 import React, {useState} from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider'
-import ArrowBackIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForwardIos';
-
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card'
+import Carousel from 'react-bootstrap/Carousel'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 function Slider (images)  {
   
-    let slides = (images.image)
-  
-    const [current, setCurrent] = useState(0);
-    const length = slides.length;
-  
-    const nextSlide = () => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
-    };
-  
-    const prevSlide = () => {
-      setCurrent(current === 0 ? length - 1 : current - 1);
-    };
-  
-    if (!Array.isArray(slides) || slides.length <= 0) {
-      return null;
-    }
+   let slides = images.image
+    
 
     return (
-          
-          <section className='gallery'>
-            
-            <button className='leftarrow' onClick={prevSlide}>
-              <ArrowBackIcon className="arrowicon"/>
-            </button>       
-            
-            {slides.map((slide, index) => {
-            return (
-              
-              <div
-                className={index === current ? 'slide active' : 'slide'}
-                key={index}
-              >
-                {index === current && (
-                  <img src={slide.image} alt=' ' className='imagey' />
-                )}
-              </div>
-              
-            );
-            })}
+      
 
-            <button className='rightarrow' onClick={nextSlide}>
-              <ArrowForwardIcon className="arrowicon"/>
-            </button>
-
-        </section>
+    <Carousel  interval={null} style={{ width: '100%', padding: "0rem", height: "100%"}} >
+      
+      {slides.map(element => {
         
+        return (
+          
+          <Carousel.Item style={{height: '100%'}}>
+        <img
+        className="x-block"
+        src={element}
+        alt="slide"
+        />
+        </Carousel.Item>
+    
     )
+  })};
+
+  </Carousel>
+
+    )
+   
 }
 
 
 function Product({id, title, image, description, price}) {
 
-        // eslint-disable-next-line no-unused-vars
+       
         const [state, dispatch] = useStateValue();
 
         const addToBasket = () => {
@@ -74,20 +56,22 @@ function Product({id, title, image, description, price}) {
             })
         }
     return (
-        <div className="product">
-            <p className="Product_info">{title}</p>    
-            <div className="product_imageSlider">
-                {Slider({image})}
-            </div>
-               <div className= "Product_info">
-                <p className= {description}>This is a carpet</p>
-            <p className= "product_price">
-                <small>$</small>
-                <p>{price}</p>
-            </p>
-                <button className= "basketbtn" onClick={addToBasket}>Add to Basket</button>
-            </div>
-        </div>
+    
+      <Card className="text-center" text="dark" bg='light' style={{ margin:"1em", border:"1px solid black"}}>
+      {Slider({image})}
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>
+          {description}
+        </Card.Text>
+        <Card.Text>
+          ${price}
+        </Card.Text>
+        <Button size="lg" className= "basketbtn" onClick={addToBasket} variant='dark'>Add to Basket</Button>
+      </Card.Body>
+    </Card>
+    
+ 
     )
 }
 
